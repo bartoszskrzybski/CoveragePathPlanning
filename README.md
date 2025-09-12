@@ -154,8 +154,8 @@ python
     # Save generated environment representation
     ros2 run nav2_map_server map_saver_cli -f <map_name>
 
-    # Coverage Execution Workflow
-    Three-Terminal Launch System
+# Coverage Execution Workflow
+### Three-Terminal Launch System
 
     Terminal 1 - Simulation Environment
     ros2 launch my_gazebo_maps gazebo_launch.py world_name:=<map_name>.world
@@ -172,6 +172,8 @@ python
 
     cd ~/CoveragePathPlanning
     python3 watershed_grid_hybrid.py
+    
+https://github.com/user-attachments/assets/50d0df96-536a-41ab-b160-ce5c4777f352
 
 # 📁 Project Structure
 
