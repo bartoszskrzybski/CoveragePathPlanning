@@ -174,6 +174,7 @@ python
 ### Three-Terminal Launch System
 
     Terminal 1 - Simulation Environment
+    
     ros2 launch my_gazebo_maps gazebo_launch.py world_name:=<map_name>.world
 
     Terminal 2 - Navigation Stack
