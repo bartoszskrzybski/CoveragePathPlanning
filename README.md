@@ -186,15 +186,27 @@ https://github.com/user-attachments/assets/50d0df96-536a-41ab-b160-ce5c4777f352
 # 📁 Project Structure
 
     CoveragePathPlanning/
-    ├── my_gazebo_maps/                # Custom simulation environments
+    ├── my_gazebo_maps/                
+    │   ├── package.xml                # Package definition
+    │   ├── setup.cfg                 
+    │   ├── setup.py
+    │   ├── launch/                    # Launch files          
+    │   │   └── gazebo_launch.py
+    │   ├── worlds/                    # Gazebo world files
+    │   │   └── map4.world
+    │   ├── resource/                  # Custom Gazebo models
+    │   ├── test/ 
+    │   └── my_gazebo_maps/ 
     ├── scripts/                       # Algorithm implementations folder
     │   ├── boustrophedon.py           # Zigzag coverage
     │   ├── spiral.py                  # Spiral pattern
-    │   ├── decomposition.py           # Boustrophedon decoposition
-    │   └── watershed_grid_hybrid.py   # Watershed decompostion + grid 
-    ├── nav2_params.yaml               # Modified Nav2 parameters
+    │   ├── choset.py                  # Boustrophedon decoposition
+    │   └── water.py                   # Watershed decompostion + grid 
     ├── maps/                          # Generated environment maps
-    └── launch/                     
+    │   ├── map4.pgm
+    │   └── map4.yaml
+    └──nav2_params.yaml               # Modified Nav2 parameters
+                     
 
 # 🎓 Academic Contribution
 
@@ -236,9 +248,10 @@ This research presents a novel Hybrid Watershed + Grid Algorithm featuring:
     source ~/.bashrc
 
 # 📄 License
-
     MIT License - Academic and research use permitted with attribution.
 
-# Master's Thesis: "Comparative Analysis of Coverage Path Planning Algorithms for Autonomous Mobile Robots with Novel Hybrid Watershed + Grid Approach"
+# Master's Thesis: 
+    "Comparative Analysis of Coverage Path Planning Algorithms for Autonomous Mobile Robots with Novel Hybrid Watershed + Grid Approach"
 
-# Author: Bartosz Skrzybski
+# Author: 
+    Bartosz Skrzybski
