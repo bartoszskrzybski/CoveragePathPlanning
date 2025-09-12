@@ -127,11 +127,11 @@ python
 
 # ⚙️ System Modifications
 
-Enhanced Nav2 Configuration
+### Enhanced Nav2 Configuration
 
-Modified Regulated Pure Pursuit Controller in global Nav2 parameters:
+    Modified Regulated Pure Pursuit Controller in global Nav2 parameters:
 
-/opt/ros/humble/share/nav2_bringup/params/nav2_params.yaml
+    /opt/ros/humble/share/nav2_bringup/params/nav2_params.yaml
 
 # Environment Mapping Procedure
 
