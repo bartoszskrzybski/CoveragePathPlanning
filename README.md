@@ -2,7 +2,7 @@
 
 Comprehensive implementation and comparative analysis of coverage path planning algorithms for autonomous robots with ROS2 integration and TurtleBot3 simulation. Features a novel Hybrid Algorithm (Watershed + Grid) for flat environment coverage.
 
-Algorithms Implemented:
+# Algorithms Implemented:
 
 # Boustrophedon (ZigZag)
 
