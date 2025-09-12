@@ -28,13 +28,13 @@ Comprehensive implementation and comparative analysis of coverage path planning 
     
 <img width="1065" height="802" alt="Screenshot from 2025-06-13 20-16-50" src="https://github.com/user-attachments/assets/e0a5523e-7fe1-4603-ae0c-7096a37318e2" />
 
-Hybrid Watershed + Grid Algorithm Details
+# Hybrid Watershed + Grid Algorithm Details
 
- Core Concept : The algorithm combines **watershed decomposition** for environment-adaptive segmentation with **rectangular grid normalization** for generating safe, efficient coverage paths.
+### Core Concept : The algorithm combines **watershed decomposition** for environment-adaptive segmentation with **rectangular grid normalization** for generating safe, efficient coverage paths.
 
-# Algorithm Architecture:
+### Algorithm Architecture:
 
-### Phase 1: Watershed Decomposition & Zone Creation
+Phase 1: Watershed Decomposition & Zone Creation
     
     Input: Safe space map, peak_distance, min_cell_area
     Output: Watershed-based cells for coverage planning
@@ -55,7 +55,7 @@ Hybrid Watershed + Grid Algorithm Details
        - Filter cells by MIN_CELL_AREA threshold
        - Create cell objects from labeled regions
 
-### Phase 2: Rectangular Grid Generation with Ultra-Safe Validation
+Phase 2: Rectangular Grid Generation with Ultra-Safe Validation
 python
     
     Input: Rectangle grid within watershed cells
@@ -74,7 +74,7 @@ python
        - IF any surrounding pixel is unsafe: return FALSE
        - ELSE: return TRUE (ultra-safe)
 
-### Phase 3: Path Planning & Advanced Optimization
+Phase 3: Path Planning & Advanced Optimization
 python
 
     Input: Watershed cells with internal coverage paths
