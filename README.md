@@ -154,12 +154,15 @@ python
 ### Step 1: SLAM with Cartographer
 
     # Terminal 1: Launch Gazebo simulation
+    
     ros2 launch my_gazebo_maps gazebo_launch.py world_name:=<map_name>.world
 
     # Terminal 2: Start Cartographer SLAM
+    
     ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
 
     # Terminal 3: Manual robot control
+    
     ros2 run turtlebot3_teleop teleop_keyboard
 
 ### Step 2: Map Preservation
