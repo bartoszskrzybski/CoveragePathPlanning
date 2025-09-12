@@ -4,7 +4,7 @@ Comprehensive implementation and comparative analysis of coverage path planning 
 
 # Algorithms Implemented:
 
-# Boustrophedon (ZigZag)
+### Boustrophedon (ZigZag)
 
     Classic back-and-forth pattern coverage for efficient coverage of convex areas.
 <img width="1661" height="638" alt="image" src="https://github.com/user-attachments/assets/acbd38d9-bc07-4fda-af1f-24d036a9f7d3" />
