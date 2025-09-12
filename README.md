@@ -179,18 +179,18 @@ https://github.com/user-attachments/assets/50d0df96-536a-41ab-b160-ce5c4777f352
 
 # 📁 Project Structure
 
-CoveragePathPlanning/
-├── my_gazebo_maps/                 # Custom simulation environments
-├── coverage_algorithms/            # Algorithm implementations
-│   ├── boustrophedon.py           # Zigzag coverage
-│   ├── spiral.py                  # Spiral pattern
-│   ├── decomposition.py           # Decomposition methods
-│   └── watershed_grid_hybrid.py   # Novel hybrid algorithm
-├── config/
-│   └── nav2_params.yaml           # Modified Nav2 parameters
-├── maps/                          # Generated environment maps
-├── results/                       # Performance metrics & visuals
-└── launch/                        # ROS2 launch files
+    CoveragePathPlanning/
+    ├── my_gazebo_maps/                 # Custom simulation environments
+    ├── coverage_algorithms/            # Algorithm implementations
+    │   ├── boustrophedon.py           # Zigzag coverage
+    │   ├── spiral.py                  # Spiral pattern
+    │   ├── decomposition.py           # Decomposition methods
+    │   └── watershed_grid_hybrid.py   # Novel hybrid algorithm
+    ├── config/
+    │   └── nav2_params.yaml           # Modified Nav2 parameters
+    ├── maps/                          # Generated environment maps
+    ├── results/                       # Performance metrics & visuals
+    └── launch/                        # ROS2 launch files
 
 # 🎓 Academic Contribution
 
