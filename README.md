@@ -174,6 +174,10 @@ python
 
     cd ~/CoveragePathPlanning
     python3 watershed_grid_hybrid.py
+
+Note:  You have to adjust map_name in file in follow line:
+
+    self.map_name = "map_test"
     
 https://github.com/user-attachments/assets/50d0df96-536a-41ab-b160-ce5c4777f352
 
