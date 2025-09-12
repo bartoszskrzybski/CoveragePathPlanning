@@ -175,6 +175,8 @@ python
     
 https://github.com/user-attachments/assets/50d0df96-536a-41ab-b160-ce5c4777f352
 
+*Video shows the complete 3-terminal system launch and A* navigation to first watershed zone.*
+
 # 📁 Project Structure
 
 CoveragePathPlanning/
