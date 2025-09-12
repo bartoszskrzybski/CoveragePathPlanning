@@ -188,7 +188,7 @@ python
     
     sudo cp CoveragePathPlanning/nav2_params.yaml /opt/ros/humble/share/nav2_bringup/params/
 
-    Note: Backup original Nav2 parameters first!
+    ⚠️ Note: This repository modifies Nav2 configuration. Please backup your original /opt/ros/humble/share/nav2_bringup/params/nav2_params.yaml before replacing.
     
 ### All operations from CPP folder
 
@@ -290,6 +290,38 @@ This research presents a novel Hybrid Watershed + Grid Algorithm featuring:
     Visual coverage maps and path visualizations
 
     Performance comparison metrics
+# 📊 Comparative Performance Analysis
+
+To objectively compare algorithms, a **Performance Evaluation Index (PEI)** was designed, combining multiple normalized metrics with predefined weights:
+
+| Metric               | Weight |
+|-----------------------|--------|
+| Available Coverage    | 50%    |
+| Total Coverage        | 30%    |
+| Execution Time        | 12%    |
+| Turn Count            | 5%     |
+| Path Redundancy       | 3%     |
+| **Total**             | 100%   |
+
+The final PEI formula:
+
+**W = 0.5·Pdost + 0.3·Pcałk + 0.12·(1 − Tn) + 0.05·(1 − Zn) + 0.03·(1 − Rn)**
+
+Where lower values of time, turns, and redundancy are inverted (1−x).
+
+---
+
+### 🏆 Algorithm Ranking (average across 7 test maps)
+
+| Rank | Algorithm     | PEI Score | Available Coverage [%] | Total Coverage [%] |
+|------|---------------|-----------|-------------------------|---------------------|
+| 1    | **Hybrid**    | **0.821** | 90.9                   | 72.9                |
+| 2    | BCD           | 0.583     | 68.6                   | 52.2                |
+| 3    | Boustrophedon | 0.571     | 65.7                   | 45.0                |
+| 4    | Spiral        | 0.174     | 28.0                   | 21.1                |
+
+✅ The **Hybrid Watershed+Grid Algorithm** clearly outperformed classical methods in both available and total coverage, while maintaining efficiency and safety.  
+
 
 # 📄 License
     MIT License - Academic and research use permitted with attribution.
