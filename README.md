@@ -170,6 +170,51 @@ python
     # Save generated environment representation
     ros2 run nav2_map_server map_saver_cli -f <map_name>
 
+# 🛠️ Installation & Setup
+
+### Clone repository
+    git clone https://github.com/bartoszskrzybski/CoveragePathPlanning.git
+
+### Build only the gazebo maps package
+    # Move package to your ROS2 workspace
+    cp -r CoveragePathPlanning/my_gazebo_maps ~/ros2_ws/src/
+    
+    # Build the package
+    cd ~/ros2_ws
+    colcon build --packages-select my_gazebo_maps
+    source install/setup.bash
+
+### Important: Manual configuration required
+    
+    sudo cp CoveragePathPlanning/nav2_params.yaml /opt/ros/humble/share/nav2_bringup/params/
+
+    Note: Backup original Nav2 parameters first!
+    
+### All operations from CPP folder
+
+    The CPP/ folder contains all necessary files (scripts, maps) and must be used as the working directory.
+    
+### Configure environment (~/.bashrc)
+
+    # Basic environment setup
+    echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
+    echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
+    
+    # Additional critical configurations (adjust paths according to your setup):
+    # export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    # export GAZEBO_MODEL_PATH=your_path_to_gazebo_models:${GAZEBO_MODEL_PATH}
+    # export GAZEBO_PLUGIN_PATH=/opt/ros/humble/lib:${GAZEBO_PLUGIN_PATH}
+    # source /opt/ros/humble/setup.bash
+    # source ~/your_ros2_ws/install/local_setup.bash
+
+    Note: Additional Gazebo and ROS2 environment variables may be required depending on your system configuration. These typically include:    
+
+    Gazebo model paths in specific order
+
+    ROS2 workspace setup scripts
+
+    Gazebo plugin paths
+    
 # Coverage Execution Workflow
 ### Three-Terminal Launch System
 
@@ -179,7 +224,7 @@ python
 
     Terminal 2 - Navigation Stack
 
-    cd ~/CoveragePathPlanning
+    cd ~/CPP
     ros2 launch turtlebot3_navigation2 navigation2.launch.py \
     use_sim_time:=true \
     map:=maps\<map_name>.yaml \
@@ -187,12 +232,12 @@ python
 
     Terminal 3 - Algorithm Execution
 
-    cd ~/CoveragePathPlanning
-    python3 watershed_grid_hybrid.py
+    cd ~/CPP
+    python3 water.py
 
-Note:  You have to adjust map_name in file in follow line:
+Note:  You must adjust the map name in the algorithm file:
 
-    self.map_name = "map_test"
+    self.map_name = "map_test"  # Change "map_test" to your actual map name
     
 https://github.com/user-attachments/assets/50d0df96-536a-41ab-b160-ce5c4777f352
 
@@ -212,14 +257,15 @@ https://github.com/user-attachments/assets/50d0df96-536a-41ab-b160-ce5c4777f352
     │   ├── resource/                  # Custom Gazebo models
     │   ├── test/ 
     │   └── my_gazebo_maps/ 
-    ├── scripts/                       # Algorithm implementations folder
-    │   ├── boustrophedon.py           # Zigzag coverage
-    │   ├── spiral.py                  # Spiral pattern
-    │   ├── choset.py                  # Boustrophedon decoposition
-    │   └── water.py                   # Watershed decompostion + grid 
-    ├── maps/                          # Generated environment maps
-    │   ├── map4.pgm
-    │   └── map4.yaml
+    ├── CPP/                           # Algorithm implementations folder
+    │   ├── scripts/
+    │   │   ├── boustrophedon.py       # Zigzag coverage
+    │   │   ├── spiral.py              # Spiral pattern
+    │   │   ├── choset.py              # Boustrophedon decoposition
+    │   │   └── water.py               # Watershed decompostion + grid 
+    │   └── maps/                      # Generated environment maps
+    │       ├── map4.pgm
+    │       └── map4.yaml
     └──nav2_params.yaml               # Modified Nav2 parameters
                      
 
@@ -244,31 +290,6 @@ This research presents a novel Hybrid Watershed + Grid Algorithm featuring:
     Visual coverage maps and path visualizations
 
     Performance comparison metrics
-
-# 🛠️ Installation & Setup
-
-### Clone repository
-    git clone https://github.com/bartoszskrzybski/CoveragePathPlanning.git
-
-### Build only the gazebo maps package
-    # Move package to your ROS2 workspace
-    cp -r CoveragePathPlanning/my_gazebo_maps ~/ros2_ws/src/
-    
-    # Build the package
-    cd ~/ros2_ws
-    colcon build --packages-select my_gazebo_maps
-    source install/setup.bash
-
-### Important: Manual configuration required
-    
-    sudo cp CoveragePathPlanning/nav2_params.yaml /opt/ros/humble/share/nav2_bringup/params/
-
-    Note: Backup original Nav2 parameters first!
-    
-### Configure environment
-    echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
-    echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
-    source ~/.bashrc
 
 # 📄 License
     MIT License - Academic and research use permitted with attribution.
