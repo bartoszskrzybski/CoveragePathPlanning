@@ -11,7 +11,7 @@ Comprehensive implementation and comparative analysis of coverage path planning 
 
 ### Spiral Pattern
 
-    Inward/outward spiral coverage optimized for circular environments.
+    Outward spiral coverage optimized for circular environments.
 <img width="1661" height="638" alt="image" src="https://github.com/user-attachments/assets/281baf20-d4b9-43a1-9b87-1f310e0d79f0" />
 
 
