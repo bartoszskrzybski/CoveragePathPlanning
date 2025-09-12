@@ -9,17 +9,17 @@ Comprehensive implementation and comparative analysis of coverage path planning 
     Classic back-and-forth pattern coverage for efficient coverage of convex areas.
 <img width="1661" height="638" alt="image" src="https://github.com/user-attachments/assets/acbd38d9-bc07-4fda-af1f-24d036a9f7d3" />
 
-# Spiral Pattern
+### Spiral Pattern
 
     Inward/outward spiral coverage optimized for circular environments.
 <img width="1661" height="638" alt="image" src="https://github.com/user-attachments/assets/281baf20-d4b9-43a1-9b87-1f310e0d79f0" />
 
 
-# Boustrophedon Decomposition
+### Boustrophedon Decomposition
 
     Area decomposition followed by systematic zigzag coverage in each segment.
 
-# Hybrid (Watershed + Grid) Algorithm (Novel Approach)
+### Hybrid (Watershed + Grid) Algorithm (Novel Approach)
 
     Methodology combining watershed decomposition with rectangular grid normalization and advanced safety mechanisms for optimal coverage in complex environments.
 
@@ -29,7 +29,7 @@ Hybrid Watershed + Grid Algorithm Details
 
 # Algorithm Architecture:
 
-Phase 1: Watershed Decomposition & Zone Creation
+### Phase 1: Watershed Decomposition & Zone Creation
     
     Input: Safe space map, peak_distance, min_cell_area
     Output: Watershed-based cells for coverage planning
@@ -50,7 +50,7 @@ Phase 1: Watershed Decomposition & Zone Creation
        - Filter cells by MIN_CELL_AREA threshold
        - Create cell objects from labeled regions
 
-Phase 2: Rectangular Grid Generation with Ultra-Safe Validation
+### Phase 2: Rectangular Grid Generation with Ultra-Safe Validation
 python
     
     Input: Rectangle grid within watershed cells
@@ -69,7 +69,7 @@ python
        - IF any surrounding pixel is unsafe: return FALSE
        - ELSE: return TRUE (ultra-safe)
 
-Phase 3: Path Planning & Advanced Optimization
+### Phase 3: Path Planning & Advanced Optimization
 python
 
     Input: Watershed cells with internal coverage paths
@@ -89,7 +89,7 @@ python
             Store transition path in roadmap
        - Return complete inter-cell roadmap
 
-🛡️ Safety Features
+# 🛡️ Safety Features
 
     Ultra-Safe Validation: 3×3 neighborhood checking around each point
 
@@ -99,7 +99,7 @@ python
 
     Obstacle-Aware Segmentation: Watershed decomposition based on obstacle proximity
 
-⚙️ Parameter Optimization
+# ⚙️ Parameter Optimization
 
     PEAK_MIN_DISTANCE: Controls minimum distance between cell centers
 
@@ -111,7 +111,7 @@ python
 
     Safety Margins: Configurable based on robot constraints
 
-📊 Performance Metrics Analysis
+# 📊 Performance Metrics Analysis
 
     Coverage Time - Total mission execution time
 
@@ -125,7 +125,7 @@ python
 
     Turn Count - Number of direction changes
 
-⚙️ System Modifications
+# ⚙️ System Modifications
 
 Enhanced Nav2 Configuration
 
@@ -133,50 +133,44 @@ Modified Regulated Pure Pursuit Controller in global Nav2 parameters:
 
 /opt/ros/humble/share/nav2_bringup/params/nav2_params.yaml
 
-🗺️ Environment Mapping Procedure
-Step 1: SLAM with Cartographer
-bash
+# Environment Mapping Procedure
 
-# Terminal 1: Launch Gazebo simulation
-ros2 launch my_gazebo_maps gazebo_launch.py world_name:=<map_name>.world
+### Step 1: SLAM with Cartographer
 
-# Terminal 2: Start Cartographer SLAM
-ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
+    # Terminal 1: Launch Gazebo simulation
+    ros2 launch my_gazebo_maps gazebo_launch.py world_name:=<map_name>.world
 
-# Terminal 3: Manual robot control
-ros2 run turtlebot3_teleop teleop_keyboard
+    # Terminal 2: Start Cartographer SLAM
+    ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
 
-Step 2: Map Preservation
-bash
+    # Terminal 3: Manual robot control
+    ros2 run turtlebot3_teleop teleop_keyboard
 
-# Save generated environment representation
-ros2 run nav2_map_server map_saver_cli -f <map_name>
+### Step 2: Map Preservation
 
-🚀 Coverage Execution Workflow
-Three-Terminal Launch System
+    # Save generated environment representation
+    ros2 run nav2_map_server map_saver_cli -f <map_name>
 
-Terminal 1 - Simulation Environment
-bash
+    # Coverage Execution Workflow
+    Three-Terminal Launch System
 
-ros2 launch my_gazebo_maps gazebo_launch.py world_name:=<map_name>.world
+    Terminal 1 - Simulation Environment
+    ros2 launch my_gazebo_maps gazebo_launch.py world_name:=<map_name>.world
 
-Terminal 2 - Navigation Stack
-bash
+    Terminal 2 - Navigation Stack
 
-cd ~/CoveragePathPlanning
-ros2 launch turtlebot3_navigation2 navigation2.launch.py \
-use_sim_time:=true \
-map:=<map_name>.yaml \
-params_file:=/opt/ros/humble/share/nav2_bringup/params/nav2_params.yaml
+    cd ~/CoveragePathPlanning
+    ros2 launch turtlebot3_navigation2 navigation2.launch.py \
+    use_sim_time:=true \
+    map:=maps\<map_name>.yaml \
+    params_file:=/opt/ros/humble/share/nav2_bringup/params/nav2_params.yaml
 
-Terminal 3 - Algorithm Execution
-bash
+    Terminal 3 - Algorithm Execution
 
-cd ~/CoveragePathPlanning
-python3 watershed_grid_hybrid.py
+    cd ~/CoveragePathPlanning
+    python3 watershed_grid_hybrid.py
 
-📁 Project Structure
-text
+# 📁 Project Structure
 
 CoveragePathPlanning/
 ├── my_gazebo_maps/                 # Custom simulation environments
@@ -191,7 +185,7 @@ CoveragePathPlanning/
 ├── results/                       # Performance metrics & visuals
 └── launch/                        # ROS2 launch files
 
-🎓 Academic Contribution
+# 🎓 Academic Contribution
 
 This research presents a novel Hybrid Watershed + Grid Algorithm featuring:
 
@@ -205,7 +199,7 @@ This research presents a novel Hybrid Watershed + Grid Algorithm featuring:
 
     A roadmap generation* for smooth inter-cell transitions
 
-📊 Results Package
+# 📊 Results Package
 
     Statistical analysis of coverage efficiency across all algorithms
 
@@ -215,51 +209,25 @@ This research presents a novel Hybrid Watershed + Grid Algorithm featuring:
 
     Turn optimization and redundancy analysis
 
-🛠️ Installation & Setup
-bash
+# 🛠️ Installation & Setup
 
-# Clone repository
-git clone https://github.com/bartoszskrzybski/CoveragePathPlanning.git
+### Clone repository
+    git clone https://github.com/bartoszskrzybski/CoveragePathPlanning.git
 
-# Build ROS2 workspace
-cd CoveragePathPlanning
-colcon build
-source install/setup.bash
+### Build ROS2 workspace
+    cd CoveragePathPlanning
+    colcon build
+    source install/setup.bash
 
-# Configure environment
-echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
-echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
-source ~/.bashrc
+### Configure environment
+    echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
+    echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
+    source ~/.bashrc
 
-📝 Usage Example
-python
+# 📄 License
 
-from watershed_grid_hybrid import HybridCoveragePlanner
+    MIT License - Academic and research use permitted with attribution.
 
-# Initialize hybrid planner
-planner = HybridCoveragePlanner(
-    peak_distance=45,    # For large maps
-    min_cell_area=1000,  # Minimum cell size threshold
-    safety_margin=0.2    # Robot safety margin
-)
+# Master's Thesis: "Comparative Analysis of Coverage Path Planning Algorithms for Autonomous Mobile Robots with Novel Hybrid Watershed + Grid Approach"
 
-# Generate coverage path
-coverage_path = planner.generate_coverage(
-    map_data='environment_map',
-    algorithm_parameters={
-        'ultra_safe_validation': True,
-        'tsp_optimization': True,
-        'smooth_transitions': True
-    }
-)
-
-# Execute coverage mission
-planner.execute_coverage(coverage_path)
-
-📄 License
-
-MIT License - Academic and research use permitted with attribution.
-
-Master's Thesis: "Comparative Analysis of Coverage Path Planning Algorithms for Autonomous Mobile Robots with Novel Hybrid Watershed + Grid Approach"
-
-Author: Bartosz Skrzybski
+# Author: Bartosz Skrzybski
