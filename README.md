@@ -18,6 +18,9 @@ Comprehensive implementation and comparative analysis of coverage path planning 
 ### Boustrophedon Decomposition
 
     Area decomposition followed by systematic zigzag coverage in each segment.
+<img width="1027" height="705" alt="image" src="https://github.com/user-attachments/assets/fc7a4c15-fc42-4ba6-984e-87d43a55c5eb" /> <img width="948" height="659" alt="image" src="https://github.com/user-attachments/assets/9f16b72d-0533-4b22-a1cc-1f79feb7ee61" /> <img width="948" height="659" alt="image" src="https://github.com/user-attachments/assets/7e768c4e-4f70-445c-a35e-5a14e3106c9f" />
+
+
 
 ### Hybrid (Watershed + Grid) Algorithm (Novel Approach)
 
