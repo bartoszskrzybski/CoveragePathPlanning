@@ -18,17 +18,19 @@ Comprehensive implementation and comparative analysis of coverage path planning 
 ### Boustrophedon Decomposition
 
     Area decomposition followed by systematic zigzag coverage in each segment.
-<img width="1027" height="705" alt="image" src="https://github.com/user-attachments/assets/fc7a4c15-fc42-4ba6-984e-87d43a55c5eb" /> <img width="948" height="659" alt="image" src="https://github.com/user-attachments/assets/9f16b72d-0533-4b22-a1cc-1f79feb7ee61" /> <img width="948" height="659" alt="image" src="https://github.com/user-attachments/assets/7e768c4e-4f70-445c-a35e-5a14e3106c9f" />
-
+    
+<img width="1075" height="860" alt="Screenshot from 2025-06-13 18-51-55" src="https://github.com/user-attachments/assets/c6103f0f-6407-48d0-849c-1787f25579d8" />
 
 
 ### Hybrid (Watershed + Grid) Algorithm (Novel Approach)
 
     Methodology combining watershed decomposition with rectangular grid normalization and advanced safety mechanisms for optimal coverage in complex environments.
+    
+<img width="1065" height="802" alt="Screenshot from 2025-06-13 20-16-50" src="https://github.com/user-attachments/assets/e0a5523e-7fe1-4603-ae0c-7096a37318e2" />
 
 Hybrid Watershed + Grid Algorithm Details
 
-    Core Concept : The algorithm combines **watershed decomposition** for environment-adaptive segmentation with **rectangular grid normalization** for generating safe, efficient coverage paths.
+ Core Concept : The algorithm combines **watershed decomposition** for environment-adaptive segmentation with **rectangular grid normalization** for generating safe, efficient coverage paths.
 
 # Algorithm Architecture:
 
@@ -180,17 +182,15 @@ https://github.com/user-attachments/assets/50d0df96-536a-41ab-b160-ce5c4777f352
 # 📁 Project Structure
 
     CoveragePathPlanning/
-    ├── my_gazebo_maps/                 # Custom simulation environments
-    ├── coverage_algorithms/            # Algorithm implementations
+    ├── my_gazebo_maps/                # Custom simulation environments
+    ├── scripts/                       # Algorithm implementations folder
     │   ├── boustrophedon.py           # Zigzag coverage
     │   ├── spiral.py                  # Spiral pattern
-    │   ├── decomposition.py           # Decomposition methods
-    │   └── watershed_grid_hybrid.py   # Novel hybrid algorithm
-    ├── config/
-    │   └── nav2_params.yaml           # Modified Nav2 parameters
+    │   ├── decomposition.py           # Boustrophedon decoposition
+    │   └── watershed_grid_hybrid.py   # Watershed decompostion + grid 
+    ├── nav2_params.yaml               # Modified Nav2 parameters
     ├── maps/                          # Generated environment maps
-    ├── results/                       # Performance metrics & visuals
-    └── launch/                        # ROS2 launch files
+    └── launch/                     
 
 # 🎓 Academic Contribution
 
