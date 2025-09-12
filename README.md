@@ -4,22 +4,22 @@ Comprehensive implementation and comparative analysis of coverage path planning 
 
 Algorithms Implemented:
 
-Boustrophedon (ZigZag)
+# Boustrophedon (ZigZag)
 
     Classic back-and-forth pattern coverage for efficient coverage of convex areas.
 <img width="1661" height="638" alt="image" src="https://github.com/user-attachments/assets/acbd38d9-bc07-4fda-af1f-24d036a9f7d3" />
 
-Spiral Pattern
+# Spiral Pattern
 
     Inward/outward spiral coverage optimized for circular environments.
 <img width="1661" height="638" alt="image" src="https://github.com/user-attachments/assets/281baf20-d4b9-43a1-9b87-1f310e0d79f0" />
 
 
-Boustrophedon with Decomposition
+# Boustrophedon Decomposition
 
     Area decomposition followed by systematic zigzag coverage in each segment.
 
-Hybrid (Watershed + Grid) Algorithm (Novel Approach)
+# Hybrid (Watershed + Grid) Algorithm (Novel Approach)
 
     Methodology combining watershed decomposition with rectangular grid normalization and advanced safety mechanisms for optimal coverage in complex environments.
 
@@ -27,9 +27,9 @@ Hybrid Watershed + Grid Algorithm Details
 
     Core Concept : The algorithm combines **watershed decomposition** for environment-adaptive segmentation with **rectangular grid normalization** for generating safe, efficient coverage paths.
 
-Algorithm Architecture:
+# Algorithm Architecture:
 
-    Phase 1: Watershed Decomposition & Zone Creation
+Phase 1: Watershed Decomposition & Zone Creation
     
     Input: Safe space map, peak_distance, min_cell_area
     Output: Watershed-based cells for coverage planning
