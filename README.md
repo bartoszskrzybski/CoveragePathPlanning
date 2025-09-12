@@ -305,9 +305,19 @@ To objectively compare algorithms, a **Performance Evaluation Index (PEI)** was 
 
 The final PEI formula:
 
-**W = 0.5·Pdost + 0.3·Pcałk + 0.12·(1 − Tn) + 0.05·(1 − Zn) + 0.03·(1 − Rn)**
+**W = 0.5·Ac + 0.3·Tc + 0.12·(1 − Tn) + 0.05·(1 − Zn) + 0.03·(1 − Pr)**
 
-Where lower values of time, turns, and redundancy are inverted (1−x).
+where:
+- Ac - Available Coverage
+- Tc - Total Coverage
+- Tn - normalized time 
+- Zn - normalized turns
+- Pr - normalized redundancy
+
+Lower values of time, turns, and redundancy are inverted (1−x).
+
+> Weights were assigned based on practical priorities in robotic coverage tasks:  
+> ensuring maximum effective coverage (80%) was prioritized over efficiency (20%).
 
 ---
 
