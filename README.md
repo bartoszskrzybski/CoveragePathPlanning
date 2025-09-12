@@ -28,7 +28,7 @@ Comprehensive implementation and comparative analysis of coverage path planning 
     
 <img width="1065" height="802" alt="Screenshot from 2025-06-13 20-16-50" src="https://github.com/user-attachments/assets/e0a5523e-7fe1-4603-ae0c-7096a37318e2" />
 
-Note: 
+### Note: 
 
     Boustrophedon/Spiral: Red line + Blue circles  
     Decomposition Algorithms: Yellow line + Blue circles  
