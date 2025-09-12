@@ -46,6 +46,7 @@ class SimpleBoustrophedonNav2Planner(Node):
         self.set_parameters([param])
         
         # Pliki mapy
+        current_dir = os.path.dirname(os.path.abspath(__file__))
         self.MAP_FILE = os.path.join(current_dir, f"../maps/{self.map_name}.pgm")
         self.YAML_FILE = os.path.join(current_dir, f"../maps/{self.map_name}.yaml")
         
