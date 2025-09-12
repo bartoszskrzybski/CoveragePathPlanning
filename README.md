@@ -28,6 +28,15 @@ Comprehensive implementation and comparative analysis of coverage path planning 
     
 <img width="1065" height="802" alt="Screenshot from 2025-06-13 20-16-50" src="https://github.com/user-attachments/assets/e0a5523e-7fe1-4603-ae0c-7096a37318e2" />
 
+Note: 
+
+    Boustrophedon/Spiral: Red line + Blue circles  
+    Decomposition Algorithms: Yellow line + Blue circles  
+    
+    - Lines: Robot's coverage path
+    - Circles: Scanner coverage range at each position
+    - Coverage: Calculated from scanner footprint overlap
+
 # Hybrid Watershed + Grid Algorithm Details
 
 ### Core Concept : The algorithm combines **watershed decomposition** for environment-adaptive segmentation with **rectangular grid normalization** for generating safe, efficient coverage paths.
@@ -111,6 +120,8 @@ python
         Large maps: 45 pixels
 
         Small maps: 20 pixels
+        
+    Note: This parameter requires manual adjustment in the code based on map size
 
     MIN_CELL_AREA: Filters out excessively small segments
 
@@ -220,7 +231,7 @@ This research presents a novel Hybrid Watershed + Grid Algorithm featuring:
 
     TSP optimization for optimal cell sequencing
 
-    A roadmap generation* for smooth inter-cell transitions
+    A roadmap generation for smooth inter-cell transitions
 
 # 📊 Results Package
 
@@ -230,18 +241,26 @@ This research presents a novel Hybrid Watershed + Grid Algorithm featuring:
 
     Performance comparison metrics
 
-    Turn optimization and redundancy analysis
-
 # 🛠️ Installation & Setup
 
 ### Clone repository
     git clone https://github.com/bartoszskrzybski/CoveragePathPlanning.git
 
-### Build ROS2 workspace
-    cd CoveragePathPlanning
-    colcon build
+### Build only the gazebo maps package
+    # Move package to your ROS2 workspace
+    cp -r CoveragePathPlanning/my_gazebo_maps ~/ros2_ws/src/
+    
+    # Build the package
+    cd ~/ros2_ws
+    colcon build --packages-select my_gazebo_maps
     source install/setup.bash
 
+### Important: Manual configuration required
+    
+    sudo cp CoveragePathPlanning/nav2_params.yaml /opt/ros/humble/share/nav2_bringup/params/
+
+    Note: Backup original Nav2 parameters first!
+    
 ### Configure environment
     echo "export TURTLEBOT3_MODEL=burger" >> ~/.bashrc
     echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
