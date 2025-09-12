@@ -330,7 +330,7 @@ Lower values of time, turns, and redundancy are inverted (1−x).
 | 3    | Boustrophedon | 0.571     | 65.7                   | 45.0                |
 | 4    | Spiral        | 0.174     | 28.0                   | 21.1                |
 
-✅ The **Hybrid Watershed+Grid Algorithm** clearly outperformed classical methods in both available and total coverage, while maintaining efficiency and safety.  
+The **Hybrid Watershed+Grid Algorithm** clearly outperformed classical methods in both available and total coverage, while maintaining efficiency and safety.  
 
 
 # 📄 License
