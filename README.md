@@ -1,6 +1,6 @@
 # Coverage Path Planning Algorithms - Master's Thesis
 
-Comprehensive implementation and comparative analysis of coverage path planning algorithms for autonomous robots with ROS2 integration and TurtleBot3 simulation. Features a novel Hybrid Algorithm (Watershed + Grid) for flat environment coverage.
+Comprehensive implementation and comparative analysis of coverage path planning algorithms for autonomous robots with ROS 2 integration and TurtleBot3 simulation. Features a novel Hybrid Algorithm (Watershed + Grid) for flat environment coverage.
 
 # Algorithms Implemented:
 
@@ -155,7 +155,7 @@ python
 
     # Terminal 1: Launch Gazebo simulation
     
-    ros2 launch my_gazebo_maps gazebo_launch.py world_name:=<map_name>.world
+     launch my_gazebo_maps gazebo_launch.py world_name:=<map_name>.world
 
     # Terminal 2: Start Cartographer SLAM
     
@@ -176,7 +176,7 @@ python
     git clone https://github.com/bartoszskrzybski/CoveragePathPlanning.git
 
 ### Build only the gazebo maps package
-    # Move package to your ROS2 workspace
+    # Move package to your ROS 2 workspace
     cp -r CoveragePathPlanning/my_gazebo_maps ~/ros2_ws/src/
     
     # Build the package
@@ -211,7 +211,7 @@ python
 
     Gazebo model paths in specific order
 
-    ROS2 workspace setup scripts
+    ROS 2 workspace setup scripts
 
     Gazebo plugin paths
     
